@@ -216,6 +216,6 @@ This project demonstrates how SQL can be used for business-focused analytics in 
 
 This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
 
-- **LinkedIn**: [Connect with me professionally](www.linkedin.com/in/danislzr)
+- **LinkedIn**: www.linkedin.com/in/danislzr
 
 Thank you for your support, and I look forward to connecting with you!
