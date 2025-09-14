@@ -10,7 +10,7 @@ This project explores user behavior in a simulated music streaming dataset using
 4. **Business performance metrics by subscription type and device usage**
 5. **Translating business problems into SQL queries for decision-making**
 
-##Tools & Technologies: 
+## Tools & Technologies: 
 
 1. **PostgreSQL**
 2. **pgAdmin4**
