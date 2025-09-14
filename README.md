@@ -101,26 +101,26 @@ WHERE
 
 The following SQL queries were developed to answer specific business questions:
 
-1.**Count the total users by subscription type**
+1. **Count the total users by subscription type**
 ```sql
 SELECT subscription_type, COUNT(*) AS total_users
 FROM spotify_subs
 GROUP BY subscription_type
 ORDER BY total_users DESC
 ```
-2.**Find the average listening time per subscription type**
+2. **Find the average listening time per subscription type**
 ```sql
 SELECT subscription_type, AVG(listening_time) AS avg_listening_time
 FROM spotify_subs
 GROUP BY subscription_type
 ```
-3.**Get the churn rate (percentage of users churned)**
+3. **Get the churn rate (percentage of users churned)**
 ```sql
 SELECT 
     ROUND(100.0 * SUM(is_churned)::NUMERIC / COUNT(*), 2) AS churn_rate_percent
 FROM spotify_subs
 ```
-4.**Find the top 3 countries with the highest number of users**
+4. **Find the top 3 countries with the highest number of users**
 ```sql
 SELECT country, COUNT(*) AS total_users
 FROM spotify_subs
@@ -128,14 +128,14 @@ GROUP BY country
 ORDER BY total_users DESC
 LIMIT 3
 ```
-5.**Average skip rate by device type**
+5. **Average skip rate by device type**
 ```sql
 SELECT device_type, AVG(skip_rate) as avg_skip_rate
 FROM spotify_subs
 GROUP BY device_type
 ORDER BY avg_skip_rate DESC
 ```
-6.**Find the number of churned users by subscription type**
+6. **Find the number of churned users by subscription type**
 ```sql
 SELECT subscription_type, COUNT (*) as churned_users
 FROM spotify_subs
@@ -143,7 +143,7 @@ WHERE is_churned = 1
 GROUP BY subscription_type
 ORDER BY churned_users DESC
 ```
-7.**Identify users who listened to the most songs (top 5)**
+7. **Identify users who listened to the most songs (top 5)**
 ```sql
 SELECT user_id, songs_played_per_day
 FROM spotify_subs
@@ -151,7 +151,7 @@ GROUP BY user_id
 ORDER BY songs_played_per_day DESC
 LIMIT 5
 ```
-8.**Average ads listened for Free vs Premium users**
+8. **Average ads listened for Free vs Premium users**
 ```sql
 SELECT subscription_type, AVG(ads_listened_per_week) as avg_ads_listened
 FROM spotify_subs
@@ -160,14 +160,14 @@ GROUP BY subscription_type
 ORDER BY avg_ads_listened DESC
 ```
 
-9.**Find the average listening time by gender**
+9. **Find the average listening time by gender**
 ```sql
 SELECT gender, AVG(listening_time) as avg_listening_time
 FROM spotify_subs
 GROUP BY gender;
 ```
 
-10.**Show churn rate by subscription type**
+10. **Show churn rate by subscription type**
 ```sql
 SELECT subscription_type, ROUND(100.0 * SUM(is_churned)::NUMERIC/Count (*),2) as churn_rate
 FROM spotify_subs
@@ -177,17 +177,25 @@ GROUP BY subscription_type
 ## Findings
 
 -**Customer Demographics:** The dataset includes users from multiple countries, genders, and age groups, providing insights into diverse listening behaviors.
+
 -**Subscription Insights:** Users are segmented into Free, Premium, Student, and Family subscriptions, with clear differences in churn rates and engagement.
+
 -**Listening Behavior:** Analysis of listening time, skip rate, and songs played highlights patterns in user engagement across subscription and device types.
+
 -**Churn Analysis:** The churn rate was calculated to identify how many users discontinued their subscriptions, with higher churn observed in Free users.
+
 -**Device Usage:** Users access the platform via Web, Mobile, and Desktop, with differences in skip rates and ad exposure across devices.
 
 ## Reports
 
 -**Subscription Summary:** Aggregated counts of users by subscription type, including churned vs active users.
+
 -**Churn Report:** Calculation of overall churn rate and churn distribution by subscription category.
+
 -**Engagement Analysis:** Average listening time, skip rate, and ads listened segmented by subscription type and device.
+
 -**Demographic Insights:** Gender- and country-based breakdowns of listening behavior and churn patterns.
+
 -**Top Users Report:** Identification of the most engaged users based on songs played and listening time.
 
 ## Conclusion
